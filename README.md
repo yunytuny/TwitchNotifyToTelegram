@@ -1,6 +1,7 @@
 # TwitchNotifyToTelegram
 That code will notify your subscribers at your telegram channel when you start your stream at Twitch.
 
+
 **Instructions:**
 
 **First**: *Go to dev.twitch.tv and login to your twitch account*
@@ -19,7 +20,13 @@ That code will notify your subscribers at your telegram channel when you start y
 
 **Final**: *Change YOUR_CHAT_ID to chat id of your telegram channel, you can get it from Get My ID bot by forward the message from your channel**
 
-If live broadcat at check return true, code send a notify to your telegram channel and go sleep to 10 hours.
-If live broadcat at check return fasle, code dont notify and re-check after one minute.
 
-**You can change delay in time.sleep(36000) and time.sleep(60).**
+Note: 
+•If nothing appears when you generating the token, so you specified something wrong.
+Double check client id and client secret which you entered.
+
+•If you have configured the script, but when you try to send an alert, it is written to you that the streamer is offline, you may not have specified something.
+Basically this is an error in the OAuth token, to check this you can write "print(data)" before "while True:"
+If first string is {'error': 'Unauthorized', 'status': 401, 'message': 'Invalid OAuth token'} it means you have specified an incorrect OAuth token.
+
+•If you find bug, write to me in a telegram. (@Juipy)
