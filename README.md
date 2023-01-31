@@ -1,6 +1,7 @@
 # TwitchNotifyToTelegram
 That code will notify your subscribers at your telegram channel when you start your stream at Twitch.
 
+///
 
 **Instructions:**
 
@@ -20,8 +21,9 @@ That code will notify your subscribers at your telegram channel when you start y
 
 **Final**: *Change YOUR_CHAT_ID to chat id of your telegram channel, you can get it from Get My ID bot by forward the message from your channel**
 
+///
 
-Note: 
+**_Note:_**
 •If nothing appears when you generating the token, so you specified something wrong.
 Double check client id and client secret which you entered.
 
