@@ -31,4 +31,4 @@ Double check client id and client secret which you entered.
 Basically this is an error in the OAuth token, to check this you can write "print(data)" before "while True:"
 If first string is {'error': 'Unauthorized', 'status': 401, 'message': 'Invalid OAuth token'} it means you have specified an incorrect OAuth token.
 
-•If you find bug, write to me in a telegram. (@Juipy)
+•If you find bug or troubles with code, write to me in a telegram. (@Juipy)
