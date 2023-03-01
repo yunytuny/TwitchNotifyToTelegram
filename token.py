@@ -12,6 +12,14 @@ data = {
 }
 response = requests.post(url, data=data)
 
+# If you write wrong client_secret
+if response.status_code == 403:
+    print("Wrong client_secret")
+
+# If you write wrong client_id
+elif response.status_code == 400:
+    print("Wrong client_id")
+
 # Extract the OAuth token from the response
 if response.status_code == 200:
     data = response.json()
