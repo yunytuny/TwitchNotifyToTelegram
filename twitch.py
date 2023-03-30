@@ -8,7 +8,7 @@ client_secret = 'YOUR_CLIENT_SECRET' # paste your client secret
 
 # Telegram API credentials
 bot_token = 'YOUR_BOT_TOKEN' # your bot token from telegram from @BotFather
-chat_id = 'TOKEN_ID_YOUR_CHANNEL' # your channel chat id
+chat_id = 'YOUR_CHAT_ID' # your channel chat id
 
 # Streamer name
 streamer = 'STREAMER_NAME' # your or your favorite streamer nickname
