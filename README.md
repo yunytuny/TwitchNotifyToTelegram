@@ -23,9 +23,4 @@ That code will notify your subscribers at your telegram channel when you start y
 
 ///
 
-**_Note:_**
-•If you have configured the script, but when you try to send an alert, it is written to you that the streamer is offline, you may not have specified something.
-Basically this is an error in the OAuth token, to check this you can write "print(data)" before "while True:"
-If first string is {'error': 'Unauthorized', 'status': 401, 'message': 'Invalid OAuth token'} it means you have specified an incorrect OAuth token.
-
 •If you find bug or you have troubles with code, write to me in a telegram. (@Juipy)
