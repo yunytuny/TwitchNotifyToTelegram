@@ -23,4 +23,4 @@ That code will notify your subscribers at your telegram channel when you start y
 
 ///
 
-•If you find bug or you have troubles with code, write to me in a telegram. (@Juipy)
+•If you find bug or you have troubles with code, write to me in a telegram channel. (@yunytunygithub)
