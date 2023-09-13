@@ -37,10 +37,6 @@ while True:
         markup_inline.add(watch_stream)
         bot.send_message(chat_id = channel_id, text = f'{streamer} запустив стрім!\n<b>Назва:</b> <code>{title}</code>\n<b>Категорія:</b> <code>{category}</code>\nhttps://twitch.tv/{streamer}', disable_web_page_preview = True, reply_markup = markup_inline, parse_mode='HTML')
     
-    if data['message'] == 'Invalid OAuth token':
-        print("You have a invalid oauth token!\nGenerate new in token.py")
-        break
-    
     if data['data']:
         # Send notification to Telegram channel
         print("Sending notify to your channel and go to sleep at 10 hours")
