@@ -3,6 +3,16 @@ That code will notify your subscribers at your telegram channel when you start y
 
 ///
 
+**Preview:**
+
+![preview](https://raw.githubusercontent.com/yunytuny/TwitchNotifyToTelegram/main/images/preview.png)
+
+///
+
+
+
+///
+
 **Instructions:**
 
 **First**: *Go to dev.twitch.tv and login to your twitch account*
