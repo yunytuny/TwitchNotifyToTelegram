@@ -33,9 +33,9 @@ while True:
     
     def notification(): # function who sends notify in telegram channel;
         markup_inline = types.InlineKeyboardMarkup()
-        watch_stream = types.InlineKeyboardButton(text = "Дивитися стрім", url = f'https://twitch.tv/{streamer}')
+        watch_stream = types.InlineKeyboardButton(text = "Watch stream", url = f'https://twitch.tv/{streamer}')
         markup_inline.add(watch_stream)
-        bot.send_message(chat_id = channel_id, text = f'{streamer} запустив стрім!\n<b>Назва:</b> <code>{title}</code>\n<b>Категорія:</b> <code>{category}</code>\nhttps://twitch.tv/{streamer}', disable_web_page_preview = True, reply_markup = markup_inline, parse_mode='HTML')
+        bot.send_message(chat_id = channel_id, text = f'{streamer} is now live!\n<b>Title:</b> <code>{title}</code>\n<b>Category:</b> <code>{category}</code>\nhttps://twitch.tv/{streamer}', disable_web_page_preview = True, reply_markup = markup_inline, parse_mode='HTML')
     
     if data['data']:
         # Send notification to Telegram channel
