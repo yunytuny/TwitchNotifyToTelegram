@@ -4,7 +4,6 @@ import json
 import telebot
 import os
 import sys
-import importlib
 from telebot import types
 
 if os.path.isfile(os.path.join('settings.json')): # Checking if settings file existing
