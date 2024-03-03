@@ -2,21 +2,46 @@ import time
 import requests
 import json
 import telebot
+import os
+import sys
+import importlib
 from telebot import types
 
+if os.path.isfile(os.path.join('settings.json')): # Checking if settings file existing
+    with open('settings.json') as file:
+        settings = json.load(file)
+else:
+    print('Файл з настройками не існує, створюємо...')
+    with open('settings.json', 'w', encoding="utf-8") as f:
+        file = {
+  "client_id": "YOUR_CLIENT_ID",
+  "client_secret": "YOUR_CLIENT_SECRET",
+  "API_TOKEN": "YOUR_BOT_TOKEN",
+  "channel_id": "YOUR_CHANNEL_ID",
+  "streamer": "STREAMER_NAME",
+  "token": "YOUR_OAUTH_TOKEN"
+}
+        json.dump(file, f, indent=4)
+        sys.exit()
+
+if settings['token'] == 'YOUR_OAUTH_TOKEN':
+    print('Генеруємо новий OAuth токен')
+    os.system('oauth_token.py')
+else:
+    pass
+    
+
 # Twitch API credentials
-client_id = 'YOUR_CLIENT_ID' # paste your client id
-client_secret = 'YOUR_CLIENT_SECRET' # paste your client secret
+client_id = settings['client_id']
+client_secret = settings['client_secret']
+token = settings['token']
 
 # Telegram API credentials
-API_TOKEN = 'YOUR_BOT_TOKEN' # your bot token from telegram from @BotFather
-channel_id = 'YOUR_CHANNEL_ID' # your channel chat id
+API_TOKEN = settings['API_TOKEN']
+channel_id = settings['channel_id']
 
 # Streamer name
-streamer = 'STREAMER_NAME' # your or your favorite streamer nickname
-
-#Twitch token from token.py
-token = "YOUR_OAUTH_TOKEN" # paste your oAuth token from token.py
+streamer = settings['streamer']
 
 url = f'https://api.twitch.tv/helix/streams?user_login={streamer}'
 headers = {
@@ -37,13 +62,20 @@ while True:
         markup_inline.add(watch_stream)
         bot.send_message(chat_id = channel_id, text = f'{streamer} запустив стрім!\n<b>Назва:</b> <code>{title}</code>\n<b>Категорія:</b> <code>{category}</code>\nhttps://twitch.tv/{streamer}', disable_web_page_preview = True, reply_markup = markup_inline, parse_mode='HTML')
     
+    if 'message' in data:
+        if data['message'] == 'Invalid OAuth token':
+            os.system('oauth_token.py')
+            python = sys.executable
+            os.execl(python, python, *sys.argv)
+    else:
+        pass
     if data['data']:
         # Send notification to Telegram channel
-        print("Sending notify to your channel and go to sleep at 10 hours")
+        print("Відправляємо повідомлення і йдемо в сон на 10 годин")
         title = data['data'][0]['title'] # Getting title of stream
         category = data['data'][0]['game_name'] # Getting category of stream
         notification()
         time.sleep(36000)  # only after 10 hour code will again check if streamer live
     else:
-        print(f'{streamer} is offline! Another check after one minute.')
+        print(f'{streamer} не стримить! Наступна перевірка через хвилину.')
         time.sleep(60)  # after one minute code will again check if streamer live
