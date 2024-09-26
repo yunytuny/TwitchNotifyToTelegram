@@ -1,8 +1,0 @@
-{
-    "client_id": "YOUR_CLIENT_ID",
-    "client_secret": "YOUR_CLIENT_SECRET",
-    "API_TOKEN": "YOUR_BOT_TOKEN",
-    "channel_id": "YOUR_CHANNEL_ID",
-    "streamer": "STREAMER_NAME",
-    "token": "YOUR_OAUTH_TOKEN"
-}

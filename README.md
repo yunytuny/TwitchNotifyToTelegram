@@ -1,17 +1,13 @@
 # TwitchNotifyToTelegram
-That code will notify your subscribers at your telegram channel when you start your stream at Twitch.
+That code will notify your followers at your telegram channel when you start your stream at Twitch.
 
-///
 
 **Preview:**
 
 ![preview](https://raw.githubusercontent.com/yunytuny/TwitchNotifyToTelegram/main/images/preview.png)
 
-///
 
 
-
-///
 
 **Instructions:**
 
@@ -30,6 +26,12 @@ That code will notify your subscribers at your telegram channel when you start y
 **Seven**: *Change YOUR_BOT_TOKEN to your bot token that you took from @BotFather*
 
 **Final**: *Change YOUR_CHAT_ID to chat id of your telegram channel, you can get it from Get My ID bot by forward the message from your channel**
+
+**Optional**: In *twitch.py* there are a couple of settings:
+
+    (False by default)
+    stream_over - If you want to send a post about the end of the stream, set True 
+    delete_post - If you want to delete notification post after the end of the stream, set True
 
 ///
 
