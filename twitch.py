@@ -110,7 +110,7 @@ while True: # main
                             "disable_web_page_preview": True
                         }
                         requests.post(telegramurl, data=payload)
-                        if delete_post == True:
+                    if delete_post == True:
                             try:
                                 telegramurl = f'https://api.telegram.org/bot{API_TOKEN}/deleteMessage'
                                 payload = {
@@ -122,7 +122,6 @@ while True: # main
                                 print(f'something went wrong while deleting message\n\nresponse: {response}')
                             else:
                                 message_id = None
-
                 time.sleep(3)
 
     else:
