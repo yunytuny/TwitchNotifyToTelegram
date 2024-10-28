@@ -35,4 +35,4 @@ That code will notify your followers at your telegram channel when you start you
 
 ///
 
-•If you find bug or you have troubles with code, write to me in a telegram channel. (@yunytunygithub)
+•If you find bug or you have troubles with code, write to me in a telegram channel. (@pookiegithub)
